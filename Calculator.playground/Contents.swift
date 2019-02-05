@@ -46,29 +46,33 @@ class Calculator{
 
 var result = 0.00
 
-let calc = Calculator(num1:3,num2:5,operation:"/")
+let calc = Calculator(num1:0,num2:0,operation:"+")
 
-switch (calc.getOperation()){
-case "+":
+if ((calc.getNum1() == 0  || calc.getNum2() == 0) && calc.getOperation() == "/"){
+    print("Vous avez écrit \(calc.getNum1()) pour le premièr numero pis \(calc.getNum2()) por le deuxième numero pis l'operation mathematique que vous avez choisi est la \(calc.getOperation()) mais c'est type d'operation n'est pas disponible, S'Il vous plaît essayer d'écrire un autre numero différent de 0, merci pour votre compréhension")
+}else{
+
+    switch (calc.getOperation()){
+    case "+":
         result = calc.addition()
         break
-case "-":
-    result = calc.subtraction()
-    break
-case "*":
-    result = calc.multiplication()
-    break
-case "/":
-    result = calc.division()
-    break
-default:
+    case "-":
+        result = calc.subtraction()
+        break
+    case "*":
+        result = calc.multiplication()
+        break
+    case "/":
+        result = calc.division()
+        break
+    default:
     result = 0.0
     print("Il n'y a pas d'une operation valide donc le resultat est = \(result)")
 
+    }
+
+    print("On a fait une \"\(calc.getOperation())\" puis le resultat est = \(result)")
 }
-
-print("On a fait une \"\(calc.getOperation())\" puis le resultat est = \(result)")
-
 
 
 
